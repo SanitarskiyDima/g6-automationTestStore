@@ -24,6 +24,10 @@ class RegistrationPage extends BasePage{
         this.elements.submitRegistrationFormButton = 'button[title="Continue"]';
     }
 
+    visit(){
+        cy.visit('/index.php?rt=account/create');
+    }
+
     getFirstNameField(){
         return cy.get(this.elements.firstNameField)
     }

@@ -1,4 +1,5 @@
 import BasePage from "./BasePage";
+import registrPage from "./RegistrationPage"
 
 class LoginPage extends BasePage {
 
