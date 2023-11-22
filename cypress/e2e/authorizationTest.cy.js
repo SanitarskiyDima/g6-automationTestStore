@@ -4,7 +4,7 @@ import user from '../fixtures/user.json'
 import { login } from '../support/helper'
 import { faker } from '@faker-js/faker'
 
-it.only('Authorization', () => {
+it('Authorization', () => {
 
     cy.log('Open website login page');
     cy.visit('/index.php?rt=account/login');
@@ -21,8 +21,6 @@ it.only('Authorization', () => {
         expect(firstNameTextElement).contain(user.firstName);
         cy.wrap(firstNameTextElement).should('contain', user.firstName);
     })
-
-    window.localStorage.setItem('hello', 'world')
 })
 
 

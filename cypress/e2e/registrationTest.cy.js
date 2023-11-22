@@ -11,7 +11,7 @@ user.companyName = faker.company.name();
 user.postcode = faker.location.zipCode('####');
 
 
-describe.skip('Succesfull registration', ()=>{
+describe('Succesfull registration', ()=>{
 
     it('Registration', () => {
         cy.visit('/');
