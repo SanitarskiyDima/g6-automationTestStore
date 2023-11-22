@@ -9,14 +9,14 @@ pipeline {
         stage('Cypress run') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS'){
-                    sh "allure:clear"
-                    sh "cy:run:allure"
+                    sh "npm run allure:clear"
+                    sh "npm run cy:run:allure"
                 }
             }
         }
         stage('Allure report') {
             steps {
-                sh "allure:generate"
+                sh "npm run allure:generate"
                 allure(
                     results: [[path: 'allure-results']]
                 )
