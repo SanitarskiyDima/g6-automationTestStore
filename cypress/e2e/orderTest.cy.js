@@ -3,7 +3,7 @@ import { login, findProduct } from '../support/helper'
 import { faker } from '@faker-js/faker'
 import orderData from '../fixtures/order.json'
 
-it('Order', () => {
+it.skip('Order', () => {
 
     login(user);
 

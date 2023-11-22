@@ -22,6 +22,7 @@ it.only('Authorization', () => {
         cy.wrap(firstNameTextElement).should('contain', user.firstName);
     })
 
+    window.localStorage.setItem('hello', 'world')
 })
 
 

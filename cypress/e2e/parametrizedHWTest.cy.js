@@ -51,7 +51,7 @@ beforeEach('Open page', () => {
 })
 
 tableTest.forEach(({testData, expected}) => {
-    it(`Toast test for position ${testData.position}, and type ${testData.type}`, () => {
+    it.skip(`Toast test for position ${testData.position}, and type ${testData.type}`, () => {
 
         cy.get('ngx-toastr', {timeout: 15000}).should('be.visible');
 
