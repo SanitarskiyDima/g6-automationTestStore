@@ -4,7 +4,6 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh "npm ci"
-                sh "npm i -g allure-commandline --save-dev"
             }
         }
         stage('Cypress run') {
