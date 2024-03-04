@@ -16,7 +16,6 @@ on:
 
 jobs:
   run:
-    needs: setup-and-build
     runs-on: ubuntu-latest
     name: Run Cypress
     steps:
