@@ -30,10 +30,7 @@ jobs:
       - name: Run tests
         uses: cypress-io/github-action@v5
         with:
-          working-directory: ./e2e
-          config: retries=2
           browser: ${{ env.BROWSER }}
-          record: true
         env:
           BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
         continue-on-error: true
