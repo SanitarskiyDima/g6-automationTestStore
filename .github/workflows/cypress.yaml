@@ -1,0 +1,35 @@
+name: E2E Cypress Tests
+run-name: E2E Cypress Tests in ${{ inputs.browser || 'chrome' }}
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Please select a browser for test run"
+        required: true
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - edge
+
+jobs:
+  run:
+    needs: setup-and-build
+    runs-on: ubuntu-latest
+    name: Run Cypress
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run tests
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: ./e2e
+          config: retries=2
+          install-browsers: true
+          browser: ${{ env.BROWSER }}
+          record: true
+        env:
+          BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
+        continue-on-error: true
